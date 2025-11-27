@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Common/">
+    <Project Path="AM.TestTask.Data.Relational.Abstractions/AM.TestTask.Data.Relational.Abstractions.csproj" Id="4dbe8666-b9a5-433e-ab11-19abbb881f10" />
+    <Project Path="AM.TestTask.Data.Relational.EntityFramework/AM.TestTask.Data.Relational.EntityFramework.csproj" Id="2a9e405b-ba12-4775-a718-6c2a2a65336e" />
+    <Project Path="AM.TestTask.Data.Relational.Sync.Abstractions/AM.TestTask.Data.Relational.Sync.Abstractions.csproj" Id="d856fb48-405d-41f5-80c3-52a626c8ed5a" />
+    <Project Path="AM.TestTask.Data.Relational.Sync.PostgreSql/AM.TestTask.Data.Relational.Sync.PostgreSql.csproj" Id="b13e7f92-af9b-4785-89bd-311d3a17039a" />
+  </Folder>
+  <Project Path="AM.TestTask.Api/AM.TestTask.Api.csproj" />
+  <Project Path="AM.TestTask.Business/AM.TestTask.Business.csproj" Id="3f40c6dd-6c26-4c8e-9a37-ec8e3444290a" />
+  <Project Path="AM.TestTask.Data.Cache/AM.TestTask.Data.Cache.csproj" Id="7810df9b-40c8-4aec-bab4-883fdd3aeb2c" />
+  <Project Path="AM.TestTask.Data.Relational.AppDatabase.PostgreSql/AM.TestTask.Data.Relational.AppDatabase.PostgreSql.csproj" Id="5de6ffc6-c29a-4448-8129-25fe60928a7c" />
+  <Project Path="AM.TestTask.Infrastructure/AM.TestTask.Infrastructure.csproj" Id="aa378afd-9c75-4c99-b9bc-eb68b030a65c" />
+</Solution>
