@@ -1,42 +1,43 @@
-# am-test-task
+## Архитектура проекта
+Проект построен по модульному принципу (упрощенный Feature‑Sliced Design), разделяя общую логику и бизнес-фичи.
+```
+src/
+├── app/
+│   ├── core/                  # Общий код, переиспользуемый во всем приложении
+│   │   ├── composables/       # Переиспользуемая логика
+│   │   ├── models/            # Общие интерфейсы и DTO
+│   │   └── services/          # Глобальные сервисы 
+│   │
+│   └── features/              # Модули бизнес-логики
+│       └── statistic/         # Модуль статистики метеоритов
+│           ├── enums/         # Перечисления для сортировки
+│           ├── models/        # Типы данных конкретной фичи
+│           └── pages/         # Компонент-страницы
+│
+├── router/                    # Конфигурация маршрутизации
+└── styles.scss                # Глобальные стили
+```
+## Ключевые решения:
+*  Единая точка входа для API-запросов (`api.service.ts`). Интерцепторы обрабатывают ошибки и типизируют ответы. Используется generic-обертка над Axios.
+*  Логика формирования списков лет вынесена в useYearFilterOptions, что разгружает компонент и делает код переиспользуемым.
+*  При перезагрузке страницы фильтры восстанавливаются из query-параметров.
+*  **Подсчет Total:** В реализации строка "Total" рассчитывается на клиенте, так как я в ТЗ не была явно описана как server-side.
 
-This template should help get you started developing with Vue 3 in Vite.
+## 🚀 Локальный запуск
+Для работы приложения требуется установленный Node.js.
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### 1. Установка зависимостей
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Настройка окружения
+Создайте файл `.env` в корне проекта (можно скопировать из шаблона `.env.template`).
 
-```sh
+### 3. Запуск
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
-```
+
